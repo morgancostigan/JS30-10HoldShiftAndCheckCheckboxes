@@ -104,13 +104,15 @@
     //check to see if shift was held
     //also, check that it is a check, not an uncheck
     let inBetween = false; 
-    if(e.shiftKey && this.checked ){
+
+    // if(e.shiftKey && this.checked ){
+    if (e.shiftKey && this.checked) {  
       //loop over all the checkboxes 
       checkboxes.forEach(checkbox => {
         if(checkbox === this || checkbox === lastChecked){
           inBetween = !inBetween;
         }////////
-        console.log(checkbox, inBetween);
+        console.log(checkbox, 'inBetween:  ', inBetween);
         if(inBetween){
           checkbox.checked = true;
         }////////
@@ -122,8 +124,6 @@
   checkboxes.forEach(checkbox => checkbox.addEventListener(
     'click', handleCheck
   ))//end checkboxes.forEach
-
-  // console.log(checkboxes);
   
 </script>
 </body>
