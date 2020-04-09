@@ -98,9 +98,22 @@
 <script>
   const checkboxes = document.querySelectorAll('.inbox input[type = "checkbox"]');
 
+  let lastChecked;//this assigns the most recent checked box
+
   function handleCheck(e) {
-    console.log(e);
-    
+    //check to see if shift was held
+    //also, check that it is a check, not an uncheck
+    let inBetween = false; 
+    if(e.shiftKey && this.checked ){
+      //loop over all the checkboxes 
+      checkboxes.forEach(checkbox => {
+        console.log(checkbox);
+        
+      })
+
+    }
+
+    lastChecked = this;
   }//end handleCheck function
 
   checkboxes.forEach(checkbox => checkbox.addEventListener(
